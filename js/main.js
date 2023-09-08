@@ -66,11 +66,28 @@ const kittenThree = `<li class="card">
 
 
 listElement.innerHTML = kittenOne + kittenTwo + kittenThree;
+const kittens = kittenOne + kittenTwo + kittenThree;
 
-// KittenName1 = 'Anastacio';
+const input_search_desc = document.querySelector('.js_in_search_desc');
+const descrSearchText = input_search_desc.value;
+const result = document.querySelector ('.js-list');
+
+console.log(result);
+
+if( kittenDesc1.includes(descrSearchText) ) {
+  result.innerHTML = kittenOne;
+}
+
+if( kittenDesc2.includes(descrSearchText) ) {
+  result.innerHTML = kittenTwo;
+}
+
+if( kittenDesc3.includes(descrSearchText) ) {
+  result.innerHTML = kittenThree;
+}
+if(descrSearchText === "") {
+result.innerHTML = kittens;}
 
 
-         
 
-console.log(kittenName1.toUpperCase());
-
+// else{( result.innerHTML = kittenOne + kittenTwo + kittenThree);}
