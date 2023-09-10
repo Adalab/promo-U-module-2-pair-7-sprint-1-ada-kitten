@@ -4,9 +4,7 @@ const listElement = document.querySelector(".js-list");
 
 const kittenImage1 = 'https://dev.adalab.es/gato-siames.webp';
 const kittenName1  = 'Anastacio';
-// kittenName1.innerHTML = kittenName1.toUpperCase();
-// kittenName1MAYUS = kittenName1.toUpperCase();
-// System.out.println(kittenName1MAYUS);
+
 const kittenDesc1 =
   ' Porte elegante, su patrón de color tan característico y sus ojos de un azul intenso, pero su historia se remonta a Asía al menos hace 500 años, donde tuvo su origen muy posiblemente.';
 const kittenRace1= 'Siamés';
@@ -18,7 +16,7 @@ const kittenOne = `<li class="card">
   <img class="card_img" src="${kittenImage1}"
     alt="gatito"
   />
-  <h3 class="card_title">"${kittenName1}</h3>
+  <h3 class="card_title">"${kittenName1.toUpperCase()}</h3>
   <h4 class="card_race">"${kittenRace1}"</h4>
   <p class="card_description">"${kittenDesc1}
    </p>
@@ -38,7 +36,7 @@ const kittenTwo = `<li class="card">
                 src="${kittenImage2}"
                 alt="sphynx-cat"
               />
-              <h3 class="card_title">"${kittenName2}"</h3>
+              <h3 class="card_title">"${kittenName2.toUpperCase()}"</h3>
               <h4 class="card_race">"${kittenRace2}</h4>
               <p class="card_description">"${kittenDesc2}
               </p>
@@ -58,7 +56,7 @@ const kittenThree = `<li class="card">
               src= '${kittenImage3}'
                 alt="maine-coon-cat"
               />
-              <h3 class="card_title">"${kittenName3}"</h3>
+              <h3 class="card_title">"${kittenName3.toUpperCase()}"</h3>
               <h4 class="card_race">"${kittenRace3}</h4>
               <p class="card_description">"${kittenDesc3}
               </p>
@@ -67,10 +65,5 @@ const kittenThree = `<li class="card">
 
 listElement.innerHTML = kittenOne + kittenTwo + kittenThree;
 
-// KittenName1 = 'Anastacio';
 
-
-         
-
-console.log(kittenName1.toUpperCase());
 
