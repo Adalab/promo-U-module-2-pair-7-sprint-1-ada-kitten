@@ -64,6 +64,7 @@ const kittenThree = `<li class="card">
 
 
 listElement.innerHTML = kittenOne + kittenTwo + kittenThree;
+
 const kittens = kittenOne + kittenTwo + kittenThree;
 
 const input_search_desc = document.querySelector('.js_in_search_desc');
@@ -87,5 +88,3 @@ if(descrSearchText === "") {
 result.innerHTML = kittens;}
 
 
-
-// else{( result.innerHTML = kittenOne + kittenTwo + kittenThree);}
