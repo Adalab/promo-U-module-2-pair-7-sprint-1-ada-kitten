@@ -86,6 +86,35 @@ if( kittenDesc3.includes(descrSearchText) ) {
 if(descrSearchText === "") {
 result.innerHTML = kittens;}
 
+const inputDesc = document.querySelector('.js-input-desc');
+const inputPhoto = document.querySelector('.js-input-photo');
+const inputName = document.querySelector('.js-input-name');
+const labelMessageError = document.querySelector('.js-label-error');
+const inputRace = document.querySelector('.js-input-race');
 
+const btnAdd = document.querySelector('.js-btn-add');
+btnAdd.addEventListener('click', (event) => {
+  event.preventDefault();
+  const valueDesc = inputDesc.value;
+  const valuePhoto = inputPhoto.value;
+  const valueName = inputName.value;
 
-// else{( result.innerHTML = kittenOne + kittenTwo + kittenThree);}
+  if (valueDesc === '' || valuePhoto === '' || valueName === '') {
+    labelMessageError.innerHTML = '¡Uy! parece que has olvidado algo';
+    labelMessageError.classList.remove('hiden');
+  } else {
+    labelMessageError.classList.add('hiden');
+  }
+  console.log (labelMessageError);
+});
+const valueRace = inputRace.value;
+const section = document.querySelector('.new-form');
+
+const btnCancel = document.querySelector('.js-btn-cancel');
+btnCancel.addEventListener('click', (event) => {
+inputDesc.value = "";
+inputName.value = "";
+inputPhoto.value = "";
+inputRace.value = "";
+section.classList.add('hiden');
+});
