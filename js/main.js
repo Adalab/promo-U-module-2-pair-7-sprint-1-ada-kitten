@@ -87,4 +87,9 @@ if( kittenDesc3.includes(descrSearchText) ) {
 if(descrSearchText === "") {
 result.innerHTML = kittens;}
 
+const inputDesc = document.querySelector('.js-input-desc');
+const inputPhoto = document.querySelector('.js-input-photo');
+const inputName = document.querySelector('.js-input-name');
+const labelMessageError = document.querySelector('.js-label-error');
+const inputRace = document.querySelector('.js-input-race');
 
