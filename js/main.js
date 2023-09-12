@@ -93,3 +93,68 @@ const inputName = document.querySelector('.js-input-name');
 const labelMessageError = document.querySelector('.js-label-error');
 const inputRace = document.querySelector('.js-input-race');
 
+const btnAdd = document.querySelector('.js-btn-add');
+
+function addNewKitten (event) {
+  event.preventDefault();
+  const valueDesc = inputDesc.value;
+  const valuePhoto = inputPhoto.value;
+  const valueName = inputName.value;
+
+  if (valueDesc === '' || valuePhoto === '' || valueName === '') {
+    labelMessageError.innerHTML = '¡Uy! parece que has olvidado algo';
+    labelMessageError.classList.remove('hiden');
+  } else if {
+    
+  }  
+  } else {
+    labelMessageError.classList.add('hiden');
+  }
+  console.log (labelMessageError);
+};
+
+btnAdd.addEventListener('click',addNewKitten);
+
+
+
+const valueRace = inputRace.value;
+const section = document.querySelector('.new-form');
+
+const btnCancel = document.querySelector('.js-btn-cancel');
+btnCancel.addEventListener('click', (event) => {
+inputDesc.value = "";
+inputName.value = "";
+inputPhoto.value = "";
+inputRace.value = "";
+section.classList.add('hiden');
+});
+// -----------------------
+
+const linkNewFormElement = document.querySelector('.js-plus');
+const newForm= document.querySelector('.js-form');
+
+function showNewCatForm() {
+  newForm.classList.remove('collapsed');
+}
+function hideNewCatForm() {
+  newForm.classList.add('collapsed');
+}
+
+
+function handleClickNewCatForm(event) {
+  event.preventDefault();
+  
+  if (newForm.classList.contains('collapsed')) {
+
+    showNewCatForm();
+
+  } else {
+    hideNewCatForm();
+  }
+}
+
+linkNewFormElement.addEventListener('click', handleClickNewCatForm);
+
+
+//modifica el evento para cumplir una función manejadora
+buttonAdd.addEventListener('click', addNewKitten);
