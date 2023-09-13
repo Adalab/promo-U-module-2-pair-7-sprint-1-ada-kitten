@@ -104,14 +104,13 @@ function addNewKitten (event) {
   if (valueDesc === '' || valuePhoto === '' || valueName === '') {
     labelMessageError.innerHTML = '¡Uy! parece que has olvidado algo';
     labelMessageError.classList.remove('hiden');
-  } else if {
     
-  }  
   } else {
     labelMessageError.classList.add('hiden');
   }
+}
   console.log (labelMessageError);
-};
+
 
 btnAdd.addEventListener('click',addNewKitten);
 
