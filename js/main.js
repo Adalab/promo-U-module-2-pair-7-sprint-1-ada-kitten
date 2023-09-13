@@ -1,5 +1,7 @@
 "use strict";
 
+// lista de gatos
+
 const listElement = document.querySelector(".js-list");
 
 const kittenImage1 = 'https://dev.adalab.es/gato-siames.webp';
@@ -67,6 +69,37 @@ listElement.innerHTML = kittenOne + kittenTwo + kittenThree;
 
 const kittens = kittenOne + kittenTwo + kittenThree;
 
+/////
+
+const urlKitten = document.querySelector('.js-input-photo');
+const descKitten = document.querySelector('.js-input-desc');
+const nameKitten = document.querySelector('.js-input-name');
+const raceKitten = document.querySelector('.js-input-race');
+
+
+
+function renderKitten(urlKitten, descKitten, nameKitten, raceKitten) {
+
+ const result = `<li class="card">
+ <img
+   class="card_img"
+   src="${urlKitten}"
+   alt="sphynx-cat"
+ />
+ <h3 class="card_title">"${nameKitten.toUpperCase()}"</h3>
+ <h4 class="card_race">"${raceKitten}</h4>
+ <p class="card_description">"${descKitten}
+ </p>
+</li>`;
+
+return result;
+}
+
+
+
+// busqueda de gatitos
+
+
 const input_search_desc = document.querySelector('.js_in_search_desc');
 const descrSearchText = input_search_desc.value;
 const result = document.querySelector ('.js-list');
@@ -100,23 +133,24 @@ function addNewKitten (event) {
   const valueDesc = inputDesc.value;
   const valuePhoto = inputPhoto.value;
   const valueName = inputName.value;
+  const valueRace = inputRace.value;
 
   if (valueDesc === '' || valuePhoto === '' || valueName === '') {
     labelMessageError.innerHTML = '¡Uy! parece que has olvidado algo';
     labelMessageError.classList.remove('hiden');
-    
-  } else {
+  } 
+   else {
     labelMessageError.classList.add('hiden');
-  }
-}
-  console.log (labelMessageError);
+    listElement.innerHTML += renderKitten(valuePhoto, valueDesc, valueName, valueRace);
+  }}
+  console.log (labelMessageError)
 
 
 btnAdd.addEventListener('click',addNewKitten);
 
 
 
-const valueRace = inputRace.value;
+
 const section = document.querySelector('.new-form');
 
 const btnCancel = document.querySelector('.js-btn-cancel');
@@ -156,4 +190,3 @@ linkNewFormElement.addEventListener('click', handleClickNewCatForm);
 
 
 //modifica el evento para cumplir una función manejadora
-buttonAdd.addEventListener('click', addNewKitten);
