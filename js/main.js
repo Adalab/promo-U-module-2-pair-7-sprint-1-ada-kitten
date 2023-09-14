@@ -123,12 +123,20 @@ function addNewKitten(event) {
     labelMessageError.classList.remove("hiden");
   } else {
     labelMessageError.classList.add("hiden");
-    listElement.innerHTML += renderKitten(
-      valuePhoto,
-      valueDesc,
-      valueName,
-      valueRace
-    );
+
+    listElement.innerHTML += renderKitten({
+      image: valuePhoto,
+      name: valueName,
+      desc: valueDesc,
+      race: valueRace,
+    });
+
+    // listElement.innerHTML += renderKitten();
+    //   valuePhoto,
+    //   valueDesc,
+    //   valueName,
+    //   valueRace
+    // );
   }
 }
 
