@@ -100,25 +100,49 @@ return result;
 // busqueda de gatitos
 
 
+// const input_search_desc = document.querySelector('.js_in_search_desc');
+// const descrSearchText = input_search_desc.value;
+// const result = document.querySelector ('.js-list');
+
+// console.log(result);
+
+// if( kittenDesc1.includes(descrSearchText) ) {
+//   result.innerHTML = kittenOne;
+// }
+
+// if( kittenDesc2.includes(descrSearchText) ) {
+//   result.innerHTML = kittenTwo;
+// }
+
+// if( kittenDesc3.includes(descrSearchText) ) {
+//   result.innerHTML = kittenThree;
+// }
+// if(descrSearchText === "") {
+// result.innerHTML = kittens;}
+
+const buttonSearch = document.querySelector('.js-button-search');
 const input_search_desc = document.querySelector('.js_in_search_desc');
-const descrSearchText = input_search_desc.value;
-const result = document.querySelector ('.js-list');
 
-console.log(result);
+const filterKitten= (event) => {
+    event.preventDefault (); 
+    listElement.innerHTML = ''; 
+    const descrSearchText = input_search_desc.value;
 
-if( kittenDesc1.includes(descrSearchText) ) {
-  result.innerHTML = kittenOne;
-}
+    if ( kittenDesc1.includes(descrSearchText)) {
+      listElement.innerHTML += kittenOne;
+    }
+    if (kittenDesc2.includes(descrSearchText)) {
+      listElement.innerHTML += kittenTwo;
+    }
+    if (kittenDesc3.includes(descrSearchText)) {
+      listElement.innerHTML += kittenThree;
+    }
+  };
 
-if( kittenDesc2.includes(descrSearchText) ) {
-  result.innerHTML = kittenTwo;
-}
+buttonSearch.addEventListener('click', filterKitten);
 
-if( kittenDesc3.includes(descrSearchText) ) {
-  result.innerHTML = kittenThree;
-}
-if(descrSearchText === "") {
-result.innerHTML = kittens;}
+
+//////////MENSAJE DE ERROR Y HIDE FORMULARIO///////
 
 const inputDesc = document.querySelector('.js-input-desc');
 const inputPhoto = document.querySelector('.js-input-photo');
