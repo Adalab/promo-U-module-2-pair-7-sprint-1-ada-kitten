@@ -10,7 +10,7 @@ const kittenData_1 = {
   image: "https://dev.adalab.es/gato-siames.webp",
   name: "Anastacio",
   desc: " Porte elegante, su patrón de color tan característico y sus ojos de un azul intenso, pero su historia se remonta a Asía al menos hace 500 años, donde tuvo su origen muy posiblemente.",
-  race: "Siamés",
+  race: "",
 };
 
 const kittenData_2 = {
@@ -26,6 +26,7 @@ const kittenData_3 = {
   desc: "Tienen la cabeza cuadrada y los ojos simétricos, por lo que su  bella mirada se ha convertido en una de sus señas de identidad. Sus ojos son grandes y las orejas resultan largas y en punta.",
   race: "Maine Coon",
 };
+
 
 const kittenOne = `<li class="card">
 <article>
@@ -66,6 +67,10 @@ const kittenThree = `<li class="card">
 listElement.innerHTML = kittenOne + kittenTwo + kittenThree;
 const kittens = kittenOne + kittenTwo + kittenThree;
 
+// Lista con la información de todos los gatitos
+const kittenDataList = [kittenData_1, kittenData_2, kittenData_3];
+
+
 const buttonSearch = document.querySelector(".js-button-search");
 const input_search_desc = document.querySelector(".js_in_search_desc");
 const js_in_search_race = document.querySelector("js_in_search_race");
@@ -89,6 +94,9 @@ const inputRace = document.querySelector(".js-input-race");
 // const raceKitten = document.querySelector(".js-input-race");
 
 //////////-----------FUNCIONES--------------//////////
+
+
+
 
 //--------Función--info nuevo gatito---------///////
 
@@ -130,7 +138,9 @@ function addNewKitten(event) {
       desc: valueDesc,
       race: valueRace,
     });
-
+  
+  
+    
     // listElement.innerHTML += renderKitten();
     //   valuePhoto,
     //   valueDesc,
@@ -160,12 +170,14 @@ const filterKitten = (event) => {
 
 //----Filtrar--por--raza--NOFUNCIONA------//
 
+const racePreview = document.querySelector('.js-race-preview')
+
 function renderRace() {
   const valueRace = inputRace.value;
   if (valueRace === "") {
-    labelMessageError.innerHTML = "¡Uy que despiste, no sabemos su raza";
+    racePreview.innerHTML = "¡Uy que despiste, no sabemos su raza";
   } else {
-    labelMessageError.classList.add("hiden");
+    racePreview.innerHTML = valueRace;
   }
 }
 
