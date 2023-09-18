@@ -64,8 +64,8 @@ const kittenThree = `<li class="card">
               </p>
           </li>`;
 
-listElement.innerHTML = kittenOne + kittenTwo + kittenThree;
-const kittens = kittenOne + kittenTwo + kittenThree;
+// listElement.innerHTML = kittenOne + kittenTwo + kittenThree;
+// const kittens = kittenOne + kittenTwo + kittenThree;
 
 // Lista con la información de todos los gatitos
 const kittenDataList = [kittenData_1, kittenData_2, kittenData_3];
@@ -152,21 +152,33 @@ function addNewKitten(event) {
 
 //------------Función--filtrar--gatitos--de--la---UL---------///
 
-const filterKitten = (event) => {
-  event.preventDefault();
-  listElement.innerHTML = "";
-  const descrSearchText = input_search_desc.value;
+// const filterKitten = (event) => {
+//   event.preventDefault();
+//   listElement.innerHTML = "";
+//   const descrSearchText = input_search_desc.value;
 
-  if (kittenData_1.desc.includes(descrSearchText)) {
-    listElement.innerHTML += kittenOne;
+//   if (kittenData_1.desc.includes(descrSearchText)) {
+//     listElement.innerHTML += kittenOne;
+//   }
+//   if (kittenData_2.desc.includes(descrSearchText)) {
+//     listElement.innerHTML += kittenTwo;
+//   }
+//   if (kittenData_3.desc.includes(descrSearchText)) {
+//     listElement.innerHTML += kittenThree;
+//   }
+// };
+function filterKitten(event) {
+  event.preventDefault();
+  const descrSearchText = input_search_desc.value;
+  listElement.innerHTML = " ";
+  for (const kittenItem of kittenDataList) {
+    if (kittenDataList[0].desc.includes(descrSearchText)) {
+        listElement.innerHTML = kittenOne;
+
+
+      //PENDIENTE DE AÑADIR EL RESTOOOOOO   }
   }
-  if (kittenData_2.desc.includes(descrSearchText)) {
-    listElement.innerHTML += kittenTwo;
-  }
-  if (kittenData_3.desc.includes(descrSearchText)) {
-    listElement.innerHTML += kittenThree;
-  }
-};
+}}
 
 //----Filtrar--por--raza--NOFUNCIONA------//
 
@@ -209,6 +221,20 @@ function handleClickNewCatForm(event) {
     hideNewCatForm();
   }
 }
+
+
+// FUNCION CREAR LISTADO GATITOS 2//
+
+function renderKittenList(kittenDataList) {
+  for (let i = 0; i < kittenDataList.length; i++){
+    listElement.innerHTML += renderKitten(kittenDataList[i]);
+    console.log(renderKittenList);
+  }
+}
+renderKittenList(kittenDataList);
+
+
+
 
 ///----------------EVENTOS-------------------------------/////
 
